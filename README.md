@@ -54,7 +54,7 @@ cd shodan-mcp
 pip install -r requirements.txt
 
 # Set up your Shodan API key
-echo "SHODAN_API_KEY=your_api_key_here" > .env
+echo "SHODAN_API_KEY=your_api_key_here" > shodan-mcp-server/.env
 ```
 
 ### Integration Options
