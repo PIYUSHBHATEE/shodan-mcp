@@ -1,0 +1,61 @@
+# Environment variables and secrets
+.env
+*.env
+.env.*
+!.env.example
+env/
+venv/
+ENV/
+.venv/
+
+# API keys and credentials
+*_key
+*_token
+credentials.json
+secrets.yaml
+secrets.json
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/
+shodan_mcp.log
+
+# Test files and results
+test_*.py
+*_test.py
+test_*.json
+*_result*.json
+*_results*.json
+*_output*.txt
+*_output*.json
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+tmp/
+temp/ 
