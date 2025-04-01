@@ -162,7 +162,7 @@ uv --directory /path/to/shodan-mcp/shodan-mcp-server run shodan_mcp.py
 ```
 
 ## 🚀 Available Commands
-**
+
 | Category | Command | Description |
 |----------|---------|-------------|
 | **Core** | `test` | Test if the MCP server is working correctly |
