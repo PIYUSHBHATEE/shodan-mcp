@@ -89,17 +89,32 @@ Claude can interact with SHODAN-MCP using the MCP protocol:
 
 #### 🖥️ Cursor IDE Integration
 
-[Cursor](https://cursor.sh/) seamlessly integrates with SHODAN-MCP:
+[Cursor](https://cursor.sh/) seamlessly integrates with SHODAN-MCP through the MCP configuration file:
 
-1. Open Cursor preferences (⌘+,)
-2. Navigate to "Extensions" > "MCP Tools"
-3. Click "Add MCP Tool" and provide:
-   - Name: `shodan`
-   - Command: `/path/to/uv`
-   - Arguments: `--directory,/path/to/shodan-mcp/shodan-mcp-server,run,shodan_mcp.py`
-4. Replace paths with your actual uv and shodan-mcp locations
-5. Save and restart Cursor
-6. Use the command palette (⌘+Shift+P) and type "MCP: Shodan" to access tools
+1. The MCP configuration file is located at `~/.cursor/mcp.json` (macOS/Linux)
+2. Add the following configuration to your `mcp.json`:
+
+   ```json
+   {
+     "mcpServers": {
+       "shodan": {
+         "command": "/path/to/uv",
+         "args": [
+           "--directory",
+           "/path/to/shodan-mcp/shodan-mcp-server",
+           "run",
+           "shodan_mcp.py"
+         ],
+         "env": {}
+       }
+     }
+   }
+   ```
+
+3. Replace `/path/to/uv` with your actual path to the uv executable (e.g., `~/.local/bin/uv` on macOS/Linux)
+4. Replace `/path/to/shodan-mcp` with the actual path to your shodan-mcp project directory
+5. Save the configuration and restart Cursor
+6. The Shodan MCP tools will now be available in your Cursor environment
 
 #### 📝 VSCode Integration
 
@@ -133,7 +148,7 @@ For VSCode users, add the following to your settings.json file:
 
 ### Installation with UV
 
-[uv](https://github.com/astral-sh/uv) is recommended for managing Python environments and dependencies due to its speed and reliability:
+**[uv](https://github.com/astral-sh/uv) is recommended for managing Python environments and dependencies due to its speed and reliability:
 
 ```bash
 # Install uv if you don't have it
@@ -147,7 +162,7 @@ uv --directory /path/to/shodan-mcp/shodan-mcp-server run shodan_mcp.py
 ```
 
 ## 🚀 Available Commands
-
+**
 | Category | Command | Description |
 |----------|---------|-------------|
 | **Core** | `test` | Test if the MCP server is working correctly |
